@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /player/
+Sitemap: https://town-of-salem.github.io/sitemap.xml
