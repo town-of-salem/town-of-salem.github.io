@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const escape = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
           libraryGrid.innerHTML = (data.games || []).map((game) => `
             <article class="game-card-shell" data-game-slug="${escape(game.slug)}">
-              <a class="game-card" href="${staticPath(`/games/${encodeURIComponent(game.slug)}/`)}">
+              <a class="game-card" href="${escape(game.url || staticPath(`/games/${encodeURIComponent(game.slug)}/`))}">
                 <div class="game-cover"><img src="${escape(game.thumbnail_url)}" alt="${escape(game.title)} browser game" loading="lazy" width="960" height="540"></div>
                 <div class="card-copy"><h3>${escape(game.title)}</h3><div class="card-meta"><span>${escape(game.category)}</span><span>${game.plays} plays</span></div><span class="card-rating">${game.rating_count ? `★ <b>${game.rating_average}</b> <small>(${game.rating_count})</small>` : '<b>New rating</b><small>Be first</small>'}</span></div>
               </a><button class="favorite-button active" type="button" data-favorite-toggle data-game-slug="${escape(game.slug)}">♥</button>
