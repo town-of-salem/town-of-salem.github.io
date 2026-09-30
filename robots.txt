@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://town-of-salem.github.io/sitemap.xml
